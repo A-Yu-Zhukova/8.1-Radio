@@ -46,8 +46,8 @@ class RadioTest {
     void IncreaseVolume() {
         Radio volume = new Radio();
 
-        int currentVolume = 5;
-        int expectedVolume = 6;
+        int currentVolume = 4;
+        int expectedVolume = 5;
 
         volume.SetVolume(currentVolume);
         volume.IncreaseVolume();
