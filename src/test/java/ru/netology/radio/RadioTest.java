@@ -14,7 +14,6 @@ class RadioTest {
         radio.SetCurrentRadioStationNumber(currentRadioStationNumber);
         int actualRadioStationNumber = radio.getCurrentRadioStationNumber();
         assertEquals(actualRadioStationNumber, expectedRadioStationNumber);
-
     }
 
     @org.junit.jupiter.api.Test
