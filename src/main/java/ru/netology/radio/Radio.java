@@ -31,28 +31,28 @@ public class Radio {
         }
         this.volume = volume;
     }
-        public void IncreaseCurrentRadioStationNumber() {
+        public void increaseCurrentRadioStationNumber() {
             currentRadioStationNumber++;
             if (currentRadioStationNumber > 9) {
                 currentRadioStationNumber = 0;
             }
         }
 
-        public void DecreaseCurrentRadioStationNumber() {
+        public void decreaseCurrentRadioStationNumber() {
             currentRadioStationNumber--;
             if (currentRadioStationNumber < 0) {
                 currentRadioStationNumber = 9;
             }
         }
 
-        public void IncreaseVolume() {
+        public void increaseVolume() {
             volume++;
             if (volume > 10) {
                 volume = 10;
             }
         }
 
-        public void DecreaseVolume() {
+        public void decreaseVolume() {
             volume--;
             if (volume < 0) {
                 volume = 0;
