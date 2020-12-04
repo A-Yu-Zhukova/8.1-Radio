@@ -6,9 +6,9 @@ class RadioTest {
 
     @org.junit.jupiter.api.Test
     void NonExistentRadioStation() {
-        Radio radio = new Radio();
-        int currentRadioStationNumber = 11;
-        int expectedRadioStationNumber = 9;
+        Radio radio = new Radio(20);
+        int currentRadioStationNumber = 25;
+        int expectedRadioStationNumber = 19;
         radio.SetCurrentRadioStationNumber(expectedRadioStationNumber);
 
         radio.SetCurrentRadioStationNumber(currentRadioStationNumber);
@@ -17,7 +17,19 @@ class RadioTest {
     }
 
     @org.junit.jupiter.api.Test
-    void IncreaseMaxCurrentRadioStationNumber() {
+    void shouldTurnMaxRadioStationWithParameter() {
+        Radio radio = new Radio(18);
+        int currentRadioStationNumber = 17;
+        int expectedRadioStationNumber =17;
+        radio.SetCurrentRadioStationNumber(expectedRadioStationNumber);
+
+        radio.SetCurrentRadioStationNumber(currentRadioStationNumber);
+        int actualRadioStationNumber = radio.getCurrentRadioStationNumber();
+        assertEquals(actualRadioStationNumber, expectedRadioStationNumber);
+    }
+
+    @org.junit.jupiter.api.Test
+    void IncreaseMaxCurrentRadioStationNumberWithoutParameter() {
         Radio radio = new Radio();
         int currentRadioStationNumber = 9;
         int expectedRadioStationNumber = 0;
@@ -29,7 +41,20 @@ class RadioTest {
     }
 
     @org.junit.jupiter.api.Test
-    void DecreaseMinCurrentRadioStationNumber() {
+    void IncreaseMaxCurrentRadioStationNumberWithParameter() {
+        Radio radio = new Radio(15);
+        int currentRadioStationNumber = 14;
+        int expectedRadioStationNumber = 0;
+
+        radio.SetCurrentRadioStationNumber(currentRadioStationNumber);
+        radio.increaseCurrentRadioStationNumber();
+        int actualRadioStationNumber = radio.getCurrentRadioStationNumber();
+        assertEquals(expectedRadioStationNumber, actualRadioStationNumber);
+    }
+
+
+    @org.junit.jupiter.api.Test
+    void DecreaseMinCurrentRadioStationNumberWithoutParameter() {
         Radio radio = new Radio();
 
         int currentRadioStationNumber = 0;
@@ -43,10 +68,36 @@ class RadioTest {
     }
 
     @org.junit.jupiter.api.Test
-    void IncreaseByOneCurrentRadioStationNumber() {
+    void DecreaseMinCurrentRadioStationNumberWithParameter() {
+        Radio radio = new Radio(12);
+
+        int currentRadioStationNumber = 0;
+        int expectedRadioStationNumber = 11;
+
+        radio.SetCurrentRadioStationNumber(currentRadioStationNumber);
+        radio.decreaseCurrentRadioStationNumber();
+        int actualRadioStationNumber = radio.getCurrentRadioStationNumber();
+        assertEquals(expectedRadioStationNumber, actualRadioStationNumber);
+
+    }
+
+    @org.junit.jupiter.api.Test
+    void IncreaseByOneCurrentRadioStationNumberWithoutParameter() {
         Radio radio = new Radio();
         int currentRadioStationNumber = 5;
         int expectedRadioStationNumber = 6;
+
+        radio.SetCurrentRadioStationNumber(currentRadioStationNumber);
+        radio.increaseCurrentRadioStationNumber();
+        int actualRadioStationNumber = radio.getCurrentRadioStationNumber();
+        assertEquals(expectedRadioStationNumber, actualRadioStationNumber);
+    }
+
+    @org.junit.jupiter.api.Test
+    void IncreaseByOneCurrentRadioStationNumberWithParameter() {
+        Radio radio = new Radio(45);
+        int currentRadioStationNumber = 37;
+        int expectedRadioStationNumber = 38;
 
         radio.SetCurrentRadioStationNumber(currentRadioStationNumber);
         radio.increaseCurrentRadioStationNumber();
